@@ -1,10 +1,10 @@
-# Maintainer: Andrey Alekseev <andrey.android7890@gmail.com>
+# Maintainer: DecentM <decentm+aur@decentm.com>
 
-pkgname=('bootsplash-theme-manjaro-glitch')
+pkgname=('bootsplash-theme-cupertino')
 pkgver=1.0
-pkgrel=1
+pkgrel=0
 arch=('x86_64')
-pkgdesc="Simple Manjaro Bootsplash with cool glitch effect"
+pkgdesc="Simple Manjaro Bootsplash for a full OSX-like boot experience"
 license=('GPL')
 depends=()
 optdepends=('bootsplash-systemd: for bootsplash functionality')
@@ -12,26 +12,26 @@ builddepends=('imagemagick')
 options=('!libtool' '!emptydirs')
 
 source=('bootsplash-packer'
-	'bootsplash-manjaro-glitch.sh'
-	'bootsplash-manjaro-glitch.initcpio_install'
-	'logo.gif'
-	'spinner.gif')
+  'bootsplash-cupertino.sh'
+  'bootsplash-cupertino.initcpio_install'
+  'logo.gif'
+  'spinner.gif')
 
 sha256sums=('SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP')
+  'SKIP'
+  'SKIP'
+  'SKIP'
+  'SKIP')
 
 build() {
   cd "$srcdir"
-  sh ./bootsplash-manjaro-glitch.sh
+  sh ./bootsplash-cupertino.sh
 }
 
-package_bootsplash-theme-manjaro-glitch() {
-  pkgdesc="Simple Manjaro Bootsplash with cool glitch effect"
+package_bootsplash-theme-cupertino() {
+  pkgdesc="Simple Manjaro Bootsplash for a full OSX-like boot experience"
   cd "$srcdir"
 
-  install -Dm644 "$srcdir/bootsplash-manjaro-glitch" "$pkgdir/usr/lib/firmware/bootsplash-themes/manjaro-glitch/bootsplash"
-  install -Dm644 "$srcdir/bootsplash-manjaro-glitch.initcpio_install" "$pkgdir/usr/lib/initcpio/install/bootsplash-manjaro-glitch"
+  install -Dm644 "$srcdir/bootsplash-cupertino" "$pkgdir/usr/lib/firmware/bootsplash-themes/cupertino/bootsplash"
+  install -Dm644 "$srcdir/bootsplash-cupertino.initcpio_install" "$pkgdir/usr/lib/initcpio/install/bootsplash-cupertino"
 }

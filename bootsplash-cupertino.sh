@@ -19,12 +19,12 @@ SPINNER_HEIGHT=$(identify $SPINNER | head -1 | cut -d " " -f 3 |
 	cut -d x -f 2)
 
 convert -alpha remove \
-	-background "#000000" \
+	-background "#BFBFBF" \
 	$LOGO \
 	logo%02d.rgb
 
 convert -alpha remove \
-	-background "#000000" \
+	-background "#BFBFBF" \
 	$SPINNER \
 	spinner%02d.rgb
 
@@ -33,20 +33,20 @@ convert -alpha remove \
 
 # Let's put Tux in the center of an orange background.
 ./bootsplash-packer \
-	--bg_red 0x00 \
-	--bg_green 0x00 \
-	--bg_blue 0x00 \
-	--frame_ms 48 \
+	--bg_red 191 \
+	--bg_green 191 \
+	--bg_blue 191 \
+	--frame_ms 36 \
 	--picture \
-	--pic_width $LOGO_WIDTH \
-	--pic_height $LOGO_HEIGHT \
+	--pic_width "$LOGO_WIDTH" \
+	--pic_height "$LOGO_HEIGHT" \
 	--pic_position 0 \
-	--pic_anim_type 1 \
+	--pic_anim_type 0 \
 	--pic_anim_loop 0 \
 	--blob logo00.rgb \
 	--picture \
-	--pic_width $SPINNER_WIDTH \
-	--pic_height $SPINNER_HEIGHT \
+	--pic_width "$SPINNER_WIDTH" \
+	--pic_height "$SPINNER_HEIGHT" \
 	--pic_position 0x05 \
 	--pic_position_offset 250 \
 	--pic_anim_type 1 \
@@ -63,24 +63,6 @@ convert -alpha remove \
 	--blob spinner09.rgb \
 	--blob spinner10.rgb \
 	--blob spinner11.rgb \
-	--blob spinner12.rgb \
-	--blob spinner13.rgb \
-	--blob spinner14.rgb \
-	--blob spinner15.rgb \
-	--blob spinner16.rgb \
-	--blob spinner17.rgb \
-	--blob spinner18.rgb \
-	--blob spinner19.rgb \
-	--blob spinner20.rgb \
-	--blob spinner21.rgb \
-	--blob spinner22.rgb \
-	--blob spinner23.rgb \
-	--blob spinner24.rgb \
-	--blob spinner25.rgb \
-	--blob spinner26.rgb \
-	--blob spinner27.rgb \
-	--blob spinner28.rgb \
-	--blob spinner29.rgb \
-	bootsplash-manjaro-glitch
+	bootsplash-cupertino
 
-rm *.rgb
+rm ./*.rgb
